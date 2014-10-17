@@ -18,6 +18,10 @@ function Codename(adjective, noun) {
     this.noun = noun;
 }
 
+function NotEnoughWordsError(msg) {
+    this.msg = msg;
+}
+
 module.exports = Codename;
 
 function getWordType(words, classifier) {
@@ -62,7 +66,15 @@ Codename.fromUrl = function(url) {
     var deferred = Q.defer();
 
     request(url, function(error, response, body) {
-        deferred.resolve(Codename.fromHtml(body));
+        if (error) {
+            deferred.reject(error);
+        }
+
+        try {
+            deferred.resolve(Codename.fromHtml(body));
+        } catch(e) {
+            deferred.reject(e.msg);
+        }
     });
 
     return deferred.promise;
@@ -87,6 +99,12 @@ Codename.fromText = function(text) {
     var taggedWords = new pos.Tagger().tag(words);
     var adjectives = getWordType(taggedWords, 'J').filter(onlyUnique);
     var nouns = getWordType(taggedWords, 'N').filter(onlyUnique);
+
+    if (adjectives.length === 0 || nouns.length === 0) {
+        throw new NotEnoughWordsError('Not enough words, <a>/<n> adj/noun'
+                .replace('<a>', adjectives.length)
+                .replace('<n>', nouns.length));
+    }
 
     return new Codename(randomFromArray(adjectives), randomFromArray(nouns));
 };
