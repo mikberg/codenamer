@@ -21,25 +21,34 @@ function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
 }
 
-module.exports = function(theme) {
+function extractWords(html) {
+    var words = new pos.Lexer().lex(extractor(html).text);
+    return new pos.Tagger().tag(words);
+}
+
+function randomFromArray(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+function codename(theme) {
     var deferred = Q.defer();
 
     theme = URL_REGEX.test(theme) ?
             theme : URL_WIKIPEDIA.replace('<theme>', theme);
 
     request(theme, function(error, response, body) {
-        var text = extractor(body).text;
-        var words = new pos.Lexer().lex(text);
-        var taggedWords = new pos.Tagger().tag(words);
+        var taggedWords = extractWords(body);
 
         var adjectives = getAll(taggedWords, 'J').filter(onlyUnique);
         var nouns = getAll(taggedWords, 'N').filter(onlyUnique);
 
-        var adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-        var noun = nouns[Math.floor(Math.random() * nouns.length)];
+        var adjective = randomFromArray(adjectives);
+        var noun = randomFromArray(nouns);
 
         deferred.resolve(S(adjective + ' ' + noun).slugify().s);
     });
 
     return deferred.promise;
-};
+}
+
+module.exports = codename;
