@@ -5,7 +5,7 @@ var request = require('request');
 var S = require('string');
 var extractor = require('unfluff');
 
-var URL = 'https://en.wikipedia.org/wiki/Newspaper';
+var URL = process.argv.slice(2)[0];
 
 function getAll(words, classifier) {
     return words.filter(function(word) {
@@ -31,5 +31,6 @@ request(URL, function(error, response, body) {
     var noun = nouns[Math.floor(Math.random() * nouns.length)];
 
     var codename = S(adjective + ' ' + noun).slugify().s;
-    console.log(codename);
+
+    process.stdout.write(codename + '\n');
 });
