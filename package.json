@@ -19,5 +19,9 @@
     "q": "^1.0.1",
     "minimist": "^1.1.0",
     "multiline": "^1.0.1"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "codename": "cli.js"
   }
 }
