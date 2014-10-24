@@ -21,6 +21,22 @@ $ npm install Codename
 
 ## Usage
 
+```
+Generate codenames e.g. for project releases easily. Make sure they stick to
+a common theme of your choice.
+
+Usage
+  codename
+  codename <theme>
+
+Example
+  codename batman
+  codename artificial_intelligence
+
+Arguments
+  theme     Name of a Wikipedia article from which to generate codenames.
+```
+
 ## API
 
 ### Install
