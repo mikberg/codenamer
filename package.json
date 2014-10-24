@@ -5,7 +5,7 @@
   "description": "Codename generator",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/jasmine-node/bin/jasmine-node spec/"
   },
   "keywords": [
     "codename"
@@ -19,7 +19,8 @@
     "unfluff": "^0.10.0",
     "q": "^1.0.1",
     "minimist": "^1.1.0",
-    "multiline": "^1.0.1"
+    "multiline": "^1.0.1",
+    "jasmine-node": "^1.14.5"
   },
   "preferGlobal": true,
   "bin": {
