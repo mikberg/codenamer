@@ -1,5 +1,5 @@
 {
-  "name": "codename",
+  "name": "codenamer",
   "version": "0.1.0-dev",
   "codename": "nominal-claims",
   "description": "Codename generator",
@@ -24,6 +24,6 @@
   },
   "preferGlobal": true,
   "bin": {
-    "codename": "cli.js"
+    "codenamer": "cli.js"
   }
 }
