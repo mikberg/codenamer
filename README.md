@@ -1,5 +1,7 @@
 # Codenamer
 
+[![Build Status](https://travis-ci.org/mikberg/codenamer.svg?branch=master)](https://travis-ci.org/mikberg/codenamer)
+
 Generate codenames e.g. for project releases easily. Make sure they stick to a
 common theme of your choice.
 
