@@ -1,3 +1,16 @@
+### 0.1.1 true-party (2014-10-24)
+
+
+#### Bug Fixes
+
+* **package:** add repository and license fields to package.json ([e4b822de](https://github.com/mikberg/codenamer/commit/e4b822dee4619175c2a4aa756f86f233e02d1907))
+
+
+#### Features
+
+* **travis:** add .travis.yml ([f72db0c1](https://github.com/mikberg/codenamer/commit/f72db0c1e3877326d439935d37ca622993430a9a))
+
+
 ## 0.1.0 nominal-claims (2014-10-24)
 
 
