@@ -10,14 +10,13 @@ var CHANGELOG = 'CHANGELOG.md';
 concha({
   repository: 'https://github.com/mikberg/codenamer',
   version: pkg.version,
-  subtitle: pkg.codename
+  subtitle: pkg.codename,
+  file: 'CHANGELOG.md'
 }, function(err, log) {
   if (err) {
     console.error(err);
   } else {
-    fs.writeFile(CHANGELOG, log, {
-      flag: 'a'
-    }, function(err) {
+    fs.writeFile(CHANGELOG, log, function(err) {
       if (err) {
         console.error(err);
       }

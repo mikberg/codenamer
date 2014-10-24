@@ -1,4 +1,6 @@
-# Codename
+# Codenamer
+
+[![Build Status](https://travis-ci.org/mikberg/codenamer.svg?branch=master)](https://travis-ci.org/mikberg/codenamer)
 
 Generate codenames e.g. for project releases easily. Make sure they stick to a
 common theme of your choice.
@@ -16,7 +18,7 @@ common theme of your choice.
 ## Install
 
 ```sh
-$ npm install Codename
+$ npm install codenamer
 ```
 
 ## Usage
@@ -42,7 +44,7 @@ Arguments
 ### Install
 
 ```sh
-$ npm install --save Codename
+$ npm install --save codenamer
 ```
 
 ### Usage
