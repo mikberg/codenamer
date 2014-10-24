@@ -4,6 +4,8 @@
   "codename": "nominal-claims",
   "description": "Codename generator",
   "main": "index.js",
+  "repository": "mikberg/codenamer",
+  "license": "MIT",
   "scripts": {
     "test": "./node_modules/jasmine-node/bin/jasmine-node spec/"
   },
