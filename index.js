@@ -14,34 +14,34 @@ var URL_WIKIPEDIA = 'http://en.wikipedia.org/wiki/<theme>';
  * @param {string} adjective Second word in the codename
  */
 function Codename(adjective, noun) {
-    this.adjective = adjective;
-    this.noun = noun;
+  this.adjective = adjective;
+  this.noun = noun;
 }
 
 function NotEnoughWordsError(msg) {
-    this.msg = msg;
+  this.msg = msg;
 }
 
 module.exports = Codename;
 
 function getWordType(words, classifier) {
-    return words.filter(function(word) {
-        return word[1].substr(0, classifier.length) === classifier;
-    }).map(function(word) {
-        return word[0];
-    });
+  return words.filter(function(word) {
+    return word[1].substr(0, classifier.length) === classifier;
+  }).map(function(word) {
+    return word[0];
+  });
 }
 
 function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
+  return self.indexOf(value) === index;
 }
 
 function randomFromArray(array) {
-    return array[Math.floor(Math.random() * array.length)];
+  return array[Math.floor(Math.random() * array.length)];
 }
 
 Codename.prototype.toString = function() {
-    return S(this.adjective + ' ' + this.noun).slugify().s;
+  return S(this.adjective + ' ' + this.noun).slugify().s;
 };
 
 /**
@@ -53,8 +53,8 @@ Codename.prototype.toString = function() {
  * @return {promise} Promise of a Codename
  */
 Codename.fromTheme = function(theme, urlTemplate) {
-    urlTemplate = urlTemplate ? urlTemplate : URL_WIKIPEDIA;
-    return Codename.fromUrl(urlTemplate.replace('<theme>', theme));
+  urlTemplate = urlTemplate ? urlTemplate : URL_WIKIPEDIA;
+  return Codename.fromUrl(urlTemplate.replace('<theme>', theme));
 };
 
 /**
@@ -63,21 +63,21 @@ Codename.fromTheme = function(theme, urlTemplate) {
  * @return {promise} Promise of a Codename
  */
 Codename.fromUrl = function(url) {
-    var deferred = Q.defer();
+  var deferred = Q.defer();
 
-    request(url, function(error, response, body) {
-        if (error) {
-            deferred.reject(error);
-        }
+  request(url, function(error, response, body) {
+    if (error) {
+      deferred.reject(error);
+    }
 
-        try {
-            deferred.resolve(Codename.fromHtml(body));
-        } catch(e) {
-            deferred.reject(e.msg);
-        }
-    });
+    try {
+      deferred.resolve(Codename.fromHtml(body));
+    } catch(e) {
+      deferred.reject(e.msg);
+    }
+  });
 
-    return deferred.promise;
+  return deferred.promise;
 };
 
 /**
@@ -86,7 +86,7 @@ Codename.fromUrl = function(url) {
  * @return {Codename} Generated Codename
  */
 Codename.fromHtml = function(html) {
-    return Codename.fromText(extractor(html).text);
+  return Codename.fromText(extractor(html).text);
 };
 
 /**
@@ -95,16 +95,16 @@ Codename.fromHtml = function(html) {
  * @return {Codename} Generated Codename
  */
 Codename.fromText = function(text) {
-    var words = new pos.Lexer().lex(text);
-    var taggedWords = new pos.Tagger().tag(words);
-    var adjectives = getWordType(taggedWords, 'J').filter(onlyUnique);
-    var nouns = getWordType(taggedWords, 'N').filter(onlyUnique);
+  var words = new pos.Lexer().lex(text);
+  var taggedWords = new pos.Tagger().tag(words);
+  var adjectives = getWordType(taggedWords, 'J').filter(onlyUnique);
+  var nouns = getWordType(taggedWords, 'N').filter(onlyUnique);
 
-    if (adjectives.length === 0 || nouns.length === 0) {
-        throw new NotEnoughWordsError('Not enough words, <a>/<n> adj/noun'
-                .replace('<a>', adjectives.length)
-                .replace('<n>', nouns.length));
-    }
+  if (adjectives.length === 0 || nouns.length === 0) {
+    throw new NotEnoughWordsError('Not enough words, <a>/<n> adj/noun'
+        .replace('<a>', adjectives.length)
+        .replace('<n>', nouns.length));
+  }
 
-    return new Codename(randomFromArray(adjectives), randomFromArray(nouns));
+  return new Codename(randomFromArray(adjectives), randomFromArray(nouns));
 };
