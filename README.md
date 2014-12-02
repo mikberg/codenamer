@@ -5,15 +5,19 @@
 Generate codenames e.g. for project releases easily. Make sure they stick to a
 common theme of your choice.
 
-**Examples of Batman related codenames:**
-
- - `constant-eyes`
- - `off-again-fantasies`
- - `petty-justice`
- - `eligible-reports`
- - `sexual-wheelchair`
- - `better-death`
- - `darker-cloud`
+```sh
+bash-3.2$ codenamer http://en.wikipedia.org/wiki/Batman --prefix a
+1: 	 apparent-aliases
+2: 	 animated-artist
+3: 	 academic-attention
+4: 	 able-actuality
+5: 	 artistic-adventure
+6: 	 aristocratic-adversary
+7: 	 animated-aid
+8: 	 akin-aid
+9: 	 animated-arc
+10: 	 apparent-artist
+```
 
 ## Install
 
@@ -24,53 +28,21 @@ $ npm install codenamer
 ## Usage
 
 ```
-Generate codenames e.g. for project releases easily. Make sure they stick to
-a common theme of your choice.
-
 Usage
-  codename
-  codename <theme>
+codename <url>
+codename <url> --prefix <prefix>
 
 Example
-  codename batman
-  codename artificial_intelligence
+codename http://en.wikipedia.org/wiki/Batman
+codename http://en.wikipedia.org/wiki/Batman --prefix a
+codename http://en.wikipedia.org/wiki/Batman --count 10
 
 Arguments
-  theme     Name of a Wikipedia article from which to generate codenames.
-```
+url      URL to find text at
 
-## API
-
-### Install
-
-```sh
-$ npm install --save codenamer
-```
-
-### Usage
-
-```javascript
-var Codename = require('Codename');
-
-// Generate from text
-var text = 'this is a long text form which to generate code words. it could ' +
-           'be an article or something like that.';
-console.log(Codename.fromText(text).toString()); // 'long-article'
-
-// Generate from HTML
-var html = '<html><p>This could be some cool HTML with text in it, pulled '+
-           'from the internet somewhere.</p></html>';
-console.log(Codename.fromHtml(html).toString()); // 'cool-internet'
-
-// Generate from URL
-Codename.fromUrl('https://docs.angularjs.org/api').then(function(codename) {
-  console.log(codename.toString()); // 'accidental-collisions'
-});
-
-// Generate from theme
-Codename.fromTheme('star_wars').then(function(codename) {
-  console.log(codename.toString()); // 'sleek-force'
-});
+Options
+--prefix  Start every part of this
+--count   Limit number of codenames returned (default: 10)
 ```
 
 ## License

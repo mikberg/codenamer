@@ -1,3 +1,16 @@
+## 0.2.0 behavioral-bullet (2014-12-02)
+
+
+#### Bug Fixes
+
+* **readme:** Update readme for new CLI ([6d628fb1](https://github.com/mikberg/codenamer/commit/6d628fb120333ca66c230edb8ef5aea3434da52b))
+
+
+#### Features
+
+* **core:** Rewrite entirely, support alliteration, simplicy CLI ([07a4d460](https://github.com/mikberg/codenamer/commit/07a4d4604371d3ecbfd6b13bcb36639650b424ad))
+
+
 ### 0.1.1 true-party (2014-10-24)
 
 

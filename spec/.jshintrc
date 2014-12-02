@@ -1,5 +1,0 @@
-{
-    "predef": ["describe", "it", "expect", "beforeEach", "spyOn"],
-    "node": true,
-    "strict": true
-}
