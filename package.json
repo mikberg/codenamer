@@ -1,7 +1,7 @@
 {
   "name": "codenamer",
-  "version": "0.1.1",
-  "codename": "true-party",
+  "version": "0.2.0",
+  "codename": "behavioral-bullet",
   "description": "Codename generator",
   "main": "index.js",
   "repository": "mikberg/codenamer",
