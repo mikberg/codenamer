@@ -24,8 +24,9 @@
     "pos": "^0.1.7",
     "q": "^1.0.1",
     "request": "^2.45.0",
+    "slug": "^0.9.1",
     "string": "^2.1.0",
-    "unfluff": "^0.10.0"
+    "unfluff": "^0.11.0"
   },
   "preferGlobal": true,
   "bin": {
