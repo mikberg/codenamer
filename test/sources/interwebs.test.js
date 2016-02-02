@@ -1,7 +1,7 @@
 import test from 'ava';
 import fs from 'fs';
 import fetchMock from 'fetch-mock';
-import interwebs from '../../codenamer/sources/interwebs';
+import { interwebs } from '../../codenamer/sources';
 
 const FIXTURE = '../fixtures/batman.html';
 const MOCK_URL = 'http://mockurl';
