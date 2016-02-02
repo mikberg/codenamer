@@ -1,4 +1,4 @@
-const URLS = /^https?:\/\//i
+const URLS = /^https?:\/\//i;
 
 function interwebs() {
   this.detect = (source) => URLS.test(source);

@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "test": "ava",
+    "lint": "eslint codenamer/ test/",
     "build": "babel codenamer -d lib"
   },
   "keywords": [
@@ -33,7 +34,9 @@
     "ava": "^0.11.0",
     "babel-cli": "^6.4.5",
     "babel-preset-es2015": "^6.3.13",
-    "babel-register": "^6.4.3"
+    "babel-register": "^6.4.3",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^4.0.0"
   },
   "ava": {
     "files": [
