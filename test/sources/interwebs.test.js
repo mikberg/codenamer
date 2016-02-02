@@ -24,7 +24,7 @@ test('rejects when it should', t => {
   t.notOk(source.detect('/file.html'));
 });
 
-test('it fetches the source url, returns string', async t => {
+test('it fetches the spec url, returns string', async t => {
   const result = await source.get(MOCK_URL);
   t.is(typeof result, 'string');
   t.ok(result.indexOf('batman') !== -1);

@@ -1,11 +1,11 @@
 const URLS = /^https?:\/\//i;
 
 function interwebs() {
-  this.detect = (source) => URLS.test(source);
-  this.get = (source) => fetch(source)
+  this.detect = (spec) => URLS.test(spec);
+  this.get = (spec) => fetch(spec)
     .then(response => {
       if (response.status >= 400) {
-        throw new Error(`Couldn't get ${source}`);
+        throw new Error(`Couldn't get ${spec}`);
       }
       return response.text();
     });
