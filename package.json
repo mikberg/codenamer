@@ -19,6 +19,7 @@
     "conventional-changelog": "0.0.11",
     "isomorphic-fetch": "^2.2.1",
     "jasmine-node": "^1.14.5",
+    "lodash.uniq": "^4.0.2",
     "minimist": "^1.1.0",
     "multiline": "^1.0.1",
     "pos": "^0.1.7",

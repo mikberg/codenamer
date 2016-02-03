@@ -1,5 +1,6 @@
 import unfluff from 'unfluff';
 import slug from 'slug';
+import uniq from 'lodash.uniq';
 
 const SLUG_OPTIONS = {
   lower: true,
@@ -15,8 +16,10 @@ export default function normalize(source) {
 
   text = text.split('/').join(' / ');
 
-  return text.split(' ')
-    .map(w => slug(w, SLUG_OPTIONS))
-    .map(w => w.split('-').join(''))
-    .filter(w => w.length > 0);
+  return uniq(
+    text.split(' ')
+      .map(w => slug(w, SLUG_OPTIONS))
+      .map(w => w.split('-').join(''))
+      .filter(w => w.length > 0)
+  );
 }

@@ -1,5 +1,6 @@
 import test from 'ava';
 import fs from 'fs';
+import uniq from 'lodash.uniq';
 import normalize from '../codenamer/normalize';
 
 const HTML = fs.readFileSync('./fixtures/batman.html', { encoding: 'utf-8' });
@@ -35,4 +36,9 @@ test('it grabs the main portion of text from html', t => {
   t.same(result.filter(w => !/^\w+$/.test(w)), []);
   t.ok(result.indexOf('disclaimers') === -1);
   t.ok(result.indexOf('interwiki') === -1);
+});
+
+test('it returns a unique list', t => {
+  const result = normalize(HTML);
+  t.same(result, uniq(result));
 });
