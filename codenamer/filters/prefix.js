@@ -1,6 +1,6 @@
 export default function prefix(pre) {
   return (words) => {
-    for (const idx in words) {
+    for (let idx = 0; idx < words.length; idx++) {
       if (!words[idx].startsWith(pre)) {
         return 0;
       }
