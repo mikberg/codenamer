@@ -1,5 +1,5 @@
 import test from 'ava';
-import { prefix } from '../../codenamer/filters';
+import { prefix } from '../../codenamer/score';
 
 test('it returns 0 for non-matching words', t => {
   const p = prefix('a');

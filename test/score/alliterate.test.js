@@ -1,5 +1,5 @@
 import test from 'ava';
-import { alliterate } from '../../codenamer/filters';
+import { alliterate } from '../../codenamer/score';
 
 test('it returns 0 for non-matching words', t => {
   const a = alliterate(a);
