@@ -17,16 +17,6 @@ function scoreCombination(combination = [], filters = []) {
     .reduce((scoreA, scoreB) => scoreA * scoreB, 1);
 }
 
-function createRelations(words, filters = []) {
-  return words
-    .map(word => ({
-      words: [word],
-      score: scoreCombination([word], filters),
-    }))
-    .filter(relation => relation.score > 0);
-}
-
-// relation -> [relation]
 function addWord(relation, words, filters = []) {
   return words
     .map(word => {
@@ -44,15 +34,16 @@ export default function arrange(words, positions = []) {
     return [];
   }
 
-  let relations = createRelations(words, positions[0]);
+  let relations = [{
+    words: [],
+    score: 1,
+  }];
 
-  positions.slice(1).forEach(filters => {
-    let newRelations = [];
-    relations.forEach(relation => {
-      newRelations = [...newRelations, ...addWord(relation, words, filters)];
-    });
-    relations = newRelations;
+  positions.forEach(filters => {
+    relations = [].concat(...relations.map(relation =>
+      addWord(relation, words, filters)
+    ));
   });
 
-  return relations.map(relation => relation.words);
+  return relations;
 }

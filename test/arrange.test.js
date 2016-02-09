@@ -18,15 +18,15 @@ test('it can filter using a single filter on single words', t => {
   const filters = [[prefix('a')]];
   const results = arrange(words, filters);
   t.ok(results.length);
-  t.ok(results.every(comb => comb[0].startsWith('a')));
+  t.ok(results.every(rel => rel.words[0].startsWith('a')));
 });
 
 test('it can use a series of filters for single words', t => {
   const filters = [[prefix('a'), onlyLength(4)]];
   const results = arrange(words, filters);
   t.ok(results.length);
-  t.ok(results.every(comb => comb[0].startsWith('a')));
-  t.ok(results.every(comb => comb[0].length === 4));
+  t.ok(results.every(rel => rel.words[0].startsWith('a')));
+  t.ok(results.every(rel => rel.words[0].length === 4));
 });
 
 test('it can create multi-word solutions', t => {
@@ -36,7 +36,7 @@ test('it can create multi-word solutions', t => {
   ];
   const results = arrange(words, filters);
   t.ok(results.length);
-  t.ok(results.every(comb => comb.length === 2));
-  t.ok(results.every(comb => comb[0].length === 4));
-  t.ok(results.every(comb => comb[1].length === 6));
+  t.ok(results.every(rel => rel.words.length === 2));
+  t.ok(results.every(rel => rel.words[0].length === 4));
+  t.ok(results.every(rel => rel.words[1].length === 6));
 });
