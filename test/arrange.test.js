@@ -40,3 +40,15 @@ test('it can create multi-word solutions', t => {
   t.ok(results.every(rel => rel.words[0].length === 4));
   t.ok(results.every(rel => rel.words[1].length === 6));
 });
+
+
+test('it can handle non-filtered positions', t => {
+  const filters = [
+    [prefix('a'), onlyLength(4)],
+    [],
+  ];
+  const results = arrange(words, filters);
+  t.ok(results.length > words.length);
+  t.ok(results.every(rel => rel.words.length === 2));
+  t.ok(results.every(rel => rel.words[0].length === 4));
+});
