@@ -32,7 +32,7 @@ test('it can use a series of filters for single words', t => {
 test('it can create multi-word solutions', t => {
   const filters = [
     [prefix('a'), onlyLength(4)],
-    [prefix('a'), onlyLength(10)],
+    [prefix('b'), onlyLength(10)],
   ];
   const results = arrange(words, filters);
   t.ok(results.length);
