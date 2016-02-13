@@ -7,5 +7,9 @@ node_js:
 before_script:
   - npm install codecov
 
+script:
+  - npm test
+  - curl -s https://en.wikipedia.org/wiki/Batman | node ./lib/cli.js
+
 after_script:
   - ./node_modules/.bin/codecov
