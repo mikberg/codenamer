@@ -9,7 +9,8 @@
   "scripts": {
     "test": "ava",
     "lint": "eslint codenamer/ test/",
-    "build": "babel codenamer -d lib"
+    "build": "babel codenamer -d lib",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "codename"
