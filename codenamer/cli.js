@@ -26,8 +26,8 @@ const cli = meow(`
         'codenames have two wirds where the first is an adjective with around 15
         letters, the next is a noun which alliterates and the total has around
         30 letters'
-      --count 10
-        return 10 codenames
+      --count 1
+        return 1 codename
 
     Options
       -w, --word      specify based on a score system, e.g. 'pa' for a word with
@@ -35,9 +35,17 @@ const cli = meow(`
                       be repeated, and scores can combined like 'pa,l5'.
 
     Score systems
-      p<string>       words starting with prefix, e.g. 'pa' for words starting
+      p<string>       Words starting with prefix, e.g. 'pa' for words starting
                       with a.
-      l<integer>      words of exact length, e.g. 'l4' for words with length 4.
+      n<integer>      Award combinations with this many letters, e.g. 'n10' to
+                      increase probabilities of words with around 10 letters.
+      c<letter>       Restrict this word to a word class:
+                        - J for adjective
+                        - N for noun
+                        - R for adverb
+                        - V for verb
+      a               Alliterate (word rhyme) up to and including this word,
+                      e.g. allow 'cheshire cat' but not 'cheshire dog'.
 
     Examples
       $ curl http://example.com | codenamer --word -pa --word -pb
