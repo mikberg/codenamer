@@ -2,6 +2,7 @@ import {
   prefix,
   wordclass,
   alliterate,
+  gaussian,
 } from './score';
 
 function parse(spec) {
@@ -15,6 +16,8 @@ function parse(spec) {
       return wordclass(config.toUpperCase());
     case 'a':
       return alliterate();
+    case 'n':
+      return gaussian(...config.split('/').map(Number));
     default:
       throw new Error(`No score named ${score}, check help.`);
   }

@@ -20,6 +20,11 @@ test('it creates alliterate filters', t => {
   t.is(filter(['cyan', 'dog'])(parseSpecs('a')), 0);
 });
 
+test('it creates gausian filters', t => {
+  t.ok(filter(['hello'])(parseSpecs('n10')) - 0.036144478534 < 0.001);
+  t.ok(filter(['hello'])(parseSpecs('n5/5')) - 0.17841241162 < 0.001);
+});
+
 test('it creates chains of filters', t => {
   t.is(filter(['cat'])(parseSpecs('pc,cN')), 1);
   t.is(filter(['cat'])(parseSpecs('pc,cJ')), 0);
