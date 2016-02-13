@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "codename": "behavioral-bullet",
   "description": "Codename generator",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": "mikberg/codenamer",
   "license": "MIT",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "preferGlobal": true,
   "bin": {
-    "codenamer": "cli.js"
+    "codenamer": "lib/cli.js"
   },
   "devDependencies": {
     "ava": "^0.11.0",
