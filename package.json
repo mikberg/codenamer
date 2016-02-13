@@ -17,20 +17,12 @@
   "author": "Mikael Berg",
   "dependencies": {
     "candies": "^0.1.6",
-    "conventional-changelog": "0.0.11",
     "gaussian": "^1.1.0",
     "get-stdin": "^5.0.1",
-    "isomorphic-fetch": "^2.2.1",
-    "jasmine-node": "^1.14.5",
     "lodash.uniq": "^4.0.2",
     "meow": "^3.7.0",
-    "minimist": "^1.1.0",
-    "multiline": "^1.0.1",
     "pos": "^0.1.7",
-    "q": "^1.0.1",
-    "request": "^2.45.0",
     "slug": "^0.9.1",
-    "string": "^2.1.0",
     "unfluff": "^0.11.0"
   },
   "preferGlobal": true,
@@ -45,8 +37,7 @@
     "babel-preset-stage-1": "^6.3.13",
     "babel-register": "^6.4.3",
     "eslint": "^1.10.3",
-    "eslint-config-airbnb": "^4.0.0",
-    "fetch-mock": "^4.1.0"
+    "eslint-config-airbnb": "^4.0.0"
   },
   "ava": {
     "files": [
@@ -54,8 +45,7 @@
     ],
     "verbose": true,
     "require": [
-      "babel-register",
-      "isomorphic-fetch"
+      "babel-register"
     ]
   }
 }
