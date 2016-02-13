@@ -9,5 +9,6 @@ export default function codenamer(textSpecs, input) {
     .map(parseSpecs);
 
   const scores = arrange(words, filters);
-  console.log(scores);
+
+  return scores;
 }

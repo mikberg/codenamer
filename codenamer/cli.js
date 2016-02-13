@@ -34,4 +34,7 @@ if (!cli.flags.word) {
   process.exit(0);
 }
 
-getStdin().then(input => codenamer(cli.flags.word, input));
+getStdin().then(input => {
+  const output = codenamer(cli.flags.word, input);
+  console.log(output);
+});
