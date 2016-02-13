@@ -1,7 +1,7 @@
 import test from 'ava';
-import arrange from '../codenamer/arrange';
+import arrange from '../src/arrange';
 import words from './fixtures/words';
-import { prefix } from '../codenamer/score';
+import { prefix } from '../src/score';
 
 const onlyLength = length => wo => {
   const total = wo

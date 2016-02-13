@@ -1,5 +1,5 @@
 import test from 'ava';
-import { prefix } from '../../codenamer/score';
+import { prefix } from '../../src/score';
 
 test('it returns 0 when the last word doesn\'t match', t => {
   const p = prefix('a');

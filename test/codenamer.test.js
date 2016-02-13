@@ -1,5 +1,5 @@
 import test from 'ava';
-import codenamer from '../codenamer';
+import codenamer from '../src';
 
 const text = 'this is my sample text';
 

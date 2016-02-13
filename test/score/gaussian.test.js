@@ -1,5 +1,5 @@
 import test from 'ava';
-import { gaussian } from '../../codenamer/score';
+import { gaussian } from '../../src/score';
 
 test('it returns density with σ=10', t => {
   const g = gaussian(10, 10);

@@ -1,5 +1,5 @@
 import test from 'ava';
-import parseSpecs from '../codenamer/parsespecs';
+import parseSpecs from '../src/parsespecs';
 
 const filter = input => chain => chain
   .map(link => link(input))

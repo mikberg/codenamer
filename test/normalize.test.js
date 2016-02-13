@@ -1,7 +1,7 @@
 import test from 'ava';
 import fs from 'fs';
 import uniq from 'lodash.uniq';
-import normalize from '../codenamer/normalize';
+import normalize from '../src/normalize';
 
 const HTML = fs.readFileSync('./fixtures/batman.html', { encoding: 'utf-8' });
 

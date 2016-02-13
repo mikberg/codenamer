@@ -1,5 +1,5 @@
 import test from 'ava';
-import { wordclass } from '../../codenamer/score';
+import { wordclass } from '../../src/score';
 
 test('it scores nouns', t => {
   const w = wordclass('NN');
