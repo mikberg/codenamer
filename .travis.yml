@@ -9,7 +9,7 @@ before_script:
 
 script:
   - npm test
-  - curl -s https://en.wikipedia.org/wiki/Batman | node ./lib/cli.js
+  - cat test/fixtures/batman.html | node ./lib/cli.js
 
 after_script:
   - ./node_modules/.bin/codecov
