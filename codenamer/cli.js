@@ -21,11 +21,13 @@ const cli = meow(`
     Usage
       $ <input> | codenamer
 
-    Default
-      --word cJ,n15 --word cN,a,n30 --count 10
-      '10 codenames, each of which has two wirds where the first is an adjective
-      with around 15 letters, the next is a noun which alliterates and the total
-      has around 30 letters'
+    Defaults
+      --word cJ,n15 --word cN,a,n30
+        'codenames have two wirds where the first is an adjective with around 15
+        letters, the next is a noun which alliterates and the total has around
+        30 letters'
+      --count 10
+        return 10 codenames
 
     Options
       -w, --word      specify based on a score system, e.g. 'pa' for a word with
@@ -51,5 +53,6 @@ getStdin().then(input => {
 
   const options = Object.assign({}, defaults, cli.flags);
   const output = codenamer(options.word, input, options.count);
-  console.log(output);
+
+  console.log(output.map(code => code.join('-')).join('\n'));
 });
