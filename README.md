@@ -1,6 +1,6 @@
 # Codenamer
 
-[![Build Status](https://travis-ci.org/mikberg/codenamer.svg?branch=master)](https://travis-ci.org/mikberg/codenamer)
+[![Build Status](https://travis-ci.org/mikberg/codenamer.svg?branch=develop)](https://travis-ci.org/mikberg/codenamer) [![Code Climate](https://codeclimate.com/github/mikberg/codenamer/badges/gpa.svg)](https://codeclimate.com/github/mikberg/codenamer) [![Test Coverage](https://codeclimate.com/github/mikberg/codenamer/badges/coverage.svg)](https://codeclimate.com/github/mikberg/codenamer/coverage)
 
 Generate codenames e.g. for project releases easily. Make sure they stick to a
 common theme of your choice.
