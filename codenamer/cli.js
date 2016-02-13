@@ -5,14 +5,27 @@ import getStdin from 'get-stdin';
 import codenamer from './';
 
 const minimistOptions = {
+  string: 'word',
   alias: {
     w: 'word',
+    c: 'count',
   },
+};
+
+const defaults = {
+  word: ['cJ,n15', 'cN,a,n30'],
+  count: 1,
 };
 
 const cli = meow(`
     Usage
       $ <input> | codenamer
+
+    Default
+      --word cJ,n15 --word cN,a,n30 --count 10
+      '10 codenames, each of which has two wirds where the first is an adjective
+      with around 15 letters, the next is a noun which alliterates and the total
+      has around 30 letters'
 
     Options
       -w, --word      specify based on a score system, e.g. 'pa' for a word with
@@ -28,13 +41,15 @@ const cli = meow(`
       $ curl http://example.com | codenamer --word -pa --word -pb
 `, minimistOptions);
 
-if (!cli.flags.word) {
-  /* eslint no-console:0 */
-  console.log(cli.help);
-  process.exit(0);
-}
-
 getStdin().then(input => {
-  const output = codenamer(cli.flags.word, input);
+  if (!input) {
+    /* eslint no-console:0 */
+    console.error('ERR: No input given');
+    console.log(cli.help);
+    process.exit(0);
+  }
+
+  const options = Object.assign({}, defaults, cli.flags);
+  const output = codenamer(options.word, input, options.count);
   console.log(output);
 });

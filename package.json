@@ -16,6 +16,7 @@
   ],
   "author": "Mikael Berg",
   "dependencies": {
+    "candies": "^0.1.6",
     "conventional-changelog": "0.0.11",
     "gaussian": "^1.1.0",
     "get-stdin": "^5.0.1",
