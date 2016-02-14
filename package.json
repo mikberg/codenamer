@@ -1,7 +1,7 @@
 {
   "name": "codenamer",
-  "version": "0.2.0",
-  "codename": "behavioral-bullet",
+  "version": "0.3.0-rc.1",
+  "codename": "canonical-catastrophe",
   "description": "Codename generator",
   "main": "lib/index.js",
   "repository": "mikberg/codenamer",
