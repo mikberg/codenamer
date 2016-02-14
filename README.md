@@ -1,3 +1,5 @@
+![codenamer](codenamer.png)
+
 > Who wouldn't like a fancy codename for their releases?
 
 [![Build Status](https://travis-ci.org/mikberg/codenamer.svg?branch=develop)](https://travis-ci.org/mikberg/codenamer) [![codecov.io](https://codecov.io/github/mikberg/codenamer/coverage.svg?branch=develop)](https://codecov.io/github/mikberg/codenamer?branch=develop)
