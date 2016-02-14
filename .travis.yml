@@ -1,3 +1,15 @@
 language: node_js
 node_js:
-  - '0.10'
+  - "5.0"
+  - "4.1"
+  - "4.0"
+
+before_script:
+  - npm install codecov
+
+script:
+  - npm test
+  - cat test/fixtures/batman.html | node ./lib/cli.js
+
+after_script:
+  - ./node_modules/.bin/codecov
