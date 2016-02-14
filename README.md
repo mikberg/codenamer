@@ -69,7 +69,7 @@ codenamer 🐯 $ babel-node src/cli.js --help
 import codenamer from 'codenamer';
 
 const text = 'this is ideally an awesomely large and badass piece of text';
-console.log(codenamer(['pa', 'pb']));
+console.log(codenamer(['pa', 'pb'], text));
 // [ ['awesomely', 'badass']]
 ```
 
