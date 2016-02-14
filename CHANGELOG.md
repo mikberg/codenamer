@@ -1,3 +1,8 @@
+## 0.3.0 canonical-catastrophe (2016-02-14)
+
+Complete rewrite of the library! Now much more flexible, cooler and more
+configurable.
+
 ## 0.2.0 behavioral-bullet (2014-12-02)
 
 
@@ -41,4 +46,3 @@
   * add release.js release helper ([e04b03a6](https://github.com/mikberg/codenamer/commit/e04b03a64e2e89c40c59d27342f48457a1b514c9))
   * return errors or reject promise if errors occur ([a9489ab2](https://github.com/mikberg/codenamer/commit/a9489ab2954ba51a797fd5782937072eea232dad))
   * add generators fromTheme, fromUrl, fromHtml and fromText ([fb5ab5a3](https://github.com/mikberg/codenamer/commit/fb5ab5a3427eed537c547ca641b5eb3e3b83a87e))
-

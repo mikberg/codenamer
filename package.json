@@ -1,6 +1,6 @@
 {
   "name": "codenamer",
-  "version": "0.3.0-rc.1",
+  "version": "0.3.0",
   "codename": "canonical-catastrophe",
   "description": "Codename generator",
   "main": "lib/index.js",
