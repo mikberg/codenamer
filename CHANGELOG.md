@@ -1,3 +1,9 @@
+## 0.3.1 deliberate-downtown (2016-02-15)
+
+#### Features
+
+* **cli:** Adjust default options to award combinations around 20 characters ([1e61342](https://github.com/mikberg/codenamer/commit/https://github.com/mikberg/codenamer/commit/6d628fb120333ca66c230edb8ef5aea3434da52b))
+
 ## 0.3.0 canonical-catastrophe (2016-02-14)
 
 Complete rewrite of the library! Now much more flexible, cooler and more

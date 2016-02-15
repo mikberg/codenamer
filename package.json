@@ -1,7 +1,7 @@
 {
   "name": "codenamer",
-  "version": "0.3.0",
-  "codename": "canonical-catastrophe",
+  "version": "0.3.1",
+  "codename": "deliberate-downtown",
   "description": "Codename generator",
   "main": "lib/index.js",
   "repository": "mikberg/codenamer",
