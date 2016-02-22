@@ -24,7 +24,7 @@ $ npm install --global codenamer
 ## Usage
 
 ```
-codenamer 🐯 $ babel-node src/cli.js --help
+codenamer 🐯 $ codenamer --help
 
   Codename generator
 
@@ -39,7 +39,7 @@ codenamer 🐯 $ babel-node src/cli.js --help
                     word with prefix 'a' (see below). Create multi-word
                     codenames using dashes (-) between specs, e.g. 'pa-pb' for
                     two words, the first starting with 'a', the next with 'b.'
-                    Default: cJ,n15-cN,a,n30
+                    Default: cJ,n15-cN,a,n20
     -c, --count     number of codenames to create
                     Default: 1
 
