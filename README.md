@@ -7,7 +7,7 @@
 Generates fancy codenames for your releases (or your dog?) from any input source, according to your specifications. Use this to maintain a consistent theme, such as Batman, astronomy or anything you'd like. Impress your friends with memorable and badass codenames!
 
 ```sh
-$ codenamer https://en.wikipedia.org/wiki/Batman | codenamer --format pa,cJ-cN,a,n25 --count 5
+$ curl -S https://en.wikipedia.org/wiki/Batman | codenamer --format pa,cJ-cN,a,n25 --count 5
 autobiographical-approach
 aristocratic-alternative
 animated-apartment
